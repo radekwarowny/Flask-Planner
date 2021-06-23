@@ -13,30 +13,29 @@
         {% for task in tasks %}
         <div class="d-flex text-muted pt-3">
             {% if task.complete == False %}
-              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#fd7e14"/><text x="50%" y="50%" fill="#fd7e14" dy=".3em">32x32</text></svg>
+              <!-- <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#fd7e14"/><text x="50%" y="50%" fill="#fd7e14" dy=".3em">32x32</text></svg>
+              -->
               <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
                 <div class="d-flex justify-content-between">
-                  <strong class="text-gray-dark">Task {{ task.id }}</strong>
-                    <strong class="text-gray-dark">{{ task.title }}</strong>
-                    <div class="bg-light clearfix btn btn-primary text-nowrap">
-                        <a href="/update/{{ task.id }}" class="btn btn-primary" role="button">Update</a>
-                        <a href="/delete/{{ task.id }}" class="btn btn-primary">Delete</a>
+                    <strong class="text-danger">{{ task.title }}</strong>
+                    <div class="bg-light clearfix btn text-nowrap">
+                        <a href="/update/{{ task.id }}" class="btn btn-primary btn-sm" role="button">Complete</a>
+                        <a href="/delete/{{ task.id }}" class="btn btn-warning btn-sm">Delete</a>
                     </div>
                 </div>
-                <span class="d-block">{{ task.date_created.strftime('%Y-%m-%d') }}</span>
+                <span class="d-block">{{ task.date_created.strftime('%b %e %a') }}</span>
               </div>
             {% else %}
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#20c997"/><text x="50%" y="50%" fill="#20c997" dy=".3em">32x32</text></svg>
-                  <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <!-- <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#20c997"/><text x="50%" y="50%" fill="#20c997" dy=".3em">32x32</text></svg>
+                  --><div class="pb-3 mb-0 small lh-sm border-bottom w-100">
                     <div class="d-flex justify-content-between">
-                      <strong class="text-gray-dark">Task {{ task.id }}</strong>
                         <strong class="text-success">{{ task.title }}</strong>
-                         <div class="bg-light clearfix btn btn-primary text-nowrap">
-                            <a href="/update/{{ task.id }}" class="btn btn-primary" role="button">Update</a>
-                            <a href="/delete/{{ task.id }}" class="btn btn-primary">Delete</a>
+                         <div class="bg-light clearfix btn text-nowrap">
+                            <a href="/update/{{ task.id }}" class="btn btn-success btn-sm" role="button">Completed</a>
+                            <a href="/delete/{{ task.id }}" class="btn btn-warning btn-sm">Delete</a>
                         </div>
                     </div>
-                    <span class="d-block">{{ task.date_created.strftime('%Y-%m-%d') }}</span>
+                    <span class="d-block">{{ task.date_created.strftime('%b %e %a') }}</span>
                   </div>
             {% endif %}
         </div>
