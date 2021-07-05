@@ -5,7 +5,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# local db
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo_site.db1'
+# heroku db
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
