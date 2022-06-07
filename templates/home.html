@@ -5,7 +5,7 @@
 
 <div class="d-flex align-items-center p-3 my-3 text-white bg-primary rounded shadow-lg">
     <div class="lh-1">
-      <h1 class="h6 mb-0 text-white lh-1">Task List</h1>
+      <h1 class="h6 mb-0 text-white lh-1">Your chat</h1>
     </div>
 </div>
 
@@ -19,7 +19,7 @@
                 <div class="d-flex justify-content-between">
                     <strong class="text-danger">{{ task.title }}</strong>
                     <div class="bg-light clearfix btn text-nowrap">
-                        <a href="/update/{{ task.id }}" class="btn btn-primary btn-sm" role="button">Complete</a>
+                        <a href="/update/{{ task.id }}" class="btn btn-primary btn-sm" role="button">Seen</a>
                         <a href="/delete/{{ task.id }}" class="btn btn-warning btn-sm">Delete</a>
                     </div>
                 </div>
